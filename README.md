@@ -93,7 +93,7 @@ npm run dev
 
 Frontend runs at: `http://localhost:5173`
 
-## 🧪 Running Tests
+## Running Tests
 
 From the `backend` directory:
 
@@ -124,13 +124,13 @@ Include:
 * Purchase action result
 * Test execution output
 
-## 🧾 Test Report
+## Test Report
 
 All backend tests executed using `pytest` passed successfully.
 
 Screenshot of test results is included in `project_screenshots/`.
 
-## 🤖 My AI Usage
+## My AI Usage
 
 AI tools such as ChatGPT and Cursor were used to:
 * Understand and clarify assignment requirements
