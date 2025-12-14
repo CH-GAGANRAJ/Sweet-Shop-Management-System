@@ -16,7 +16,7 @@ backend/sweets.db
 backend/test_sweets.db
 
 # Node / Frontend
-node_modules/
+frontend/node_modules/
 dist/
 npm-debug.log*
 yarn-debug.log*
