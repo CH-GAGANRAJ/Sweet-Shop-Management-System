@@ -1,85 +1,111 @@
-#  Sweet Shop Management System (Backend)
+#  Sweet Shop Management System
 
-A backend service for managing a sweet shop inventory with authentication, built using FastAPI and developed using a Test-Driven Development (TDD) approach.
+A full-stack Sweet Shop Management System built with FastAPI (Backend) and React (Frontend), developed using Test-Driven Development (TDD) principles.
 
-## Features
+##  Project Overview
 
-### Authentication
-* User registration
-* User login
-* Password hashing
-* Token-based authentication (basic)
-
-### Sweets Management
+This application allows users to:
+* Register and log in
+* View available sweets
 * Add new sweets
-* List available sweets
-* Purchase sweets (inventory update)
-* Handles insufficient stock cases
+* Purchase sweets with inventory updates
 
-###  Persistence
-* Database-backed models (SQLite)
-* Clean separation using `db.py`, `models.py`, and `schemas.py`
+The backend focuses on clean architecture and TDD, while the frontend is a minimal Single Page Application (SPA) to demonstrate end-to-end functionality.
 
-##  Test-Driven Development (TDD)
+## Test-Driven Development (TDD)
 
-This project strictly follows TDD:
+The backend was developed using a strict **RED → GREEN → REFACTOR** approach:
 
-1. **RED** - Wrote failing tests first (Auth & Sweets)
-2. **GREEN** - Added minimal implementation to pass tests
-3. **REFACTOR** - Introduced database, models, and schemas without changing test behavior
+1. **RED** – Tests written first and pushed while failing
+2. **GREEN** – Minimal implementation added to pass tests
+3. **REFACTOR** – Database, models, and schemas introduced without changing test behavior
 
-The Git history clearly reflects: **RED → GREEN → REFACTOR**
+The Git commit history clearly reflects this workflow.
 
 ##  Tech Stack
 
-* **Backend**: FastAPI
-* **Database**: SQLite
-* **ORM**: SQLAlchemy
-* **Validation**: Pydantic
-* **Testing**: Pytest
-* **Language**: Python 3.11
+### Backend
+* FastAPI
+* Python 3.11
+* SQLite
+* SQLAlchemy
+* Pydantic
+* Pytest
+
+### Frontend
+* React (Vite)
+* JavaScript
+* Fetch API
+* Minimal CSS
 
 ##  Project Structure
 
 ```
-backend/
-├── app/
-│   ├── auth.py
-│   ├── auth_routes.py
-│   ├── sweets_routes.py
-│   ├── db.py
-│   ├── models.py
-│   ├── schemas.py
-│   └── main.py
-├── tests/
-│   ├── test_auth_routes.py
-│   ├── test_auth_utils.py
-│   └── test_sweets.py
-└── requirements.txt
+Sweet-Shop-Management-System/
+├── backend/
+│   ├── app/
+│   │   ├── auth.py
+│   │   ├── auth_routes.py
+│   │   ├── sweets_routes.py
+│   │   ├── db.py
+│   │   ├── models.py
+│   │   ├── schemas.py
+│   │   └── main.py
+│   ├── tests/
+│   │   ├── test_auth_routes.py
+│   │   ├── test_auth_utils.py
+│   │   └── test_sweets.py
+│   └── requirements.txt
+├── frontend/
+│   ├── index.html
+│   ├── package.json
+│   ├── vite.config.js
+│   └── src/
+│       ├── App.jsx
+│       ├── Login.jsx
+│       ├── Sweets.jsx
+│       ├── api.js
+│       ├── main.jsx
+│       └── style.css
+├── screenshots/
+└── README.md
 ```
 
-##  How to Run
+##  How to Run Locally
 
-###  Install dependencies
+### 1️ Backend Setup
+
 ```bash
+cd backend
 pip install -r requirements.txt
-```
-
-###  Run the application
-```bash
 uvicorn app.main:app --reload
 ```
 
-###  Run tests
+Backend runs at: `http://localhost:8000`
+
+### 2️ Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend runs at: `http://localhost:5173`
+
+## 🧪 Running Tests
+
+From the `backend` directory:
+
 ```bash
 python -m pytest
 ```
 
-All tests should pass ✅
+All tests should pass successfully.
 
-## API Endpoints (Summary)
+## 📡 API Endpoints
 
-### Auth
+### Authentication
 * `POST /api/auth/register`
 * `POST /api/auth/login`
 
@@ -88,18 +114,28 @@ All tests should pass ✅
 * `GET /api/sweets`
 * `POST /api/sweets/purchase`
 
-## Future Enhancements
+##  Screenshots
 
-* Frontend UI (React)
-* JWT-based authentication
-* Role-based access
-* Sweet search & filters
-* CI/CD pipeline
+📁 Screenshots are available in the `project_screenshots/` folder.
 
-## Key Takeaway
+Include:
+* Login page
+* Sweets list page
+* Purchase action result
+* Test execution output
 
-This project demonstrates:
-* Proper backend design
-* Real-world TDD workflow
-* Clean commit history
-* Scalable structure
+## 🧾 Test Report
+
+All backend tests executed using `pytest` passed successfully.
+
+Screenshot of test results is included in `project_screenshots/`.
+
+## 🤖 My AI Usage
+
+AI tools such as ChatGPT and Cursor were used to:
+* Understand and clarify assignment requirements
+* Design backend architecture
+* Follow Test-Driven Development correctly
+* Generate boilerplate code and improve productivity
+
+All code was written, reviewed, and integrated by me. No external repositories or third-party codebases were copied.
